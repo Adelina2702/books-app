@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5rem;
+  background-color: #64748B;
+  color: #18181B;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input[type="text"], button {
+  font: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+main {
+  margin: auto;
+  max-width: 600px;
+  background-color: #F8FAFC;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px #333;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1 {
+  margin: 0.5rem 0;
+}
+
+form, article {
+  padding: 1rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #F8FAFC;
+  border: 1px solid #18181B;
 }
 
-.App-link {
-  color: #61dafb;
+.contact {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type="checkbox"] {
+  min-width: 30px;
+  min-height: 30px;
+  margin-right: 1rem;
+}
+
+button {
+  min-width: 50px;
+  min-height: 50px;
+  border: 1px solid #18181B;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.trash {
+  background-color: #F8FAFC;
+  color: #EF4444;
+}
+
+.trash:focus, .trash:hover {
+  filter:brightness(120%)
+}
+
+form {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #18181B;
+  margin-bottom: 1rem;
+}
+
+form label {
+  position: absolute;
+  left: -10000px;
+}
+
+.new-contact {
+  width: 100%;
+  padding-right: 30px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 0.5px solid #18181B;
+}
+
+.submit {
+  background-color: #F8FAFC;
+  color: gray;
+}
+
+.submit:focus, .submit:hover {
+  background-color: limegreen;
+  color: #F8FAFC;
 }
