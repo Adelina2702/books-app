@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Gurmukhi&display=swap');
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Tiro Gurmukhi', serif;
   font-size: 1.5rem;
-  background-color: #64748B;
+  background-color: #2727;
   color: #18181B;
 }
 
@@ -14,14 +14,15 @@ input[type="text"], button {
 main {
   margin: auto;
   max-width: 600px;
-  background-color: #F8FAFC;
+  background-color: #0808;
   padding: 1rem 2rem;
   border-radius: 15px;
-  box-shadow: 2px 2px 5px #333;
+  box-shadow: 2px 2px 5px #999;
 }
 
 h1 {
   margin: 0.5rem 0;
+  color: #18181B;
 }
 
 form, article {
@@ -29,7 +30,7 @@ form, article {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #F8FAFC;
+  background-color:khaki;
   border: 1px solid #18181B;
 }
 

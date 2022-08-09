@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useQuery, useMutation, useQueryClient } from 'react-query'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTrash, faUpload } from '@fortawesome/free-solid-svg-icons'
+import { faTrash, faSquareCheck} from '@fortawesome/free-solid-svg-icons'
 import { getContact, addContact, updateContact, deleteContact } from '../../api/contactApi'
 
-export default function ContactList() {
+export default function BookList() {
     const [newContact, setNewContact] = useState('')
     const queryClient = useQueryClient()
 
@@ -12,28 +12,28 @@ export default function ContactList() {
         isLoading,
         isError,
         error,
-        data: contacts
-    } = useQuery('contacts', getContact, {
+        data: books
+    } = useQuery('books', getContact, {
         select: data => data.sort((a,b) => b.id - a.id)
     })
 
 
     const addContactMutation = useMutation(addContact,{
         onSuccess: () => {
-            queryClient.invalidateQueries("contacts")
+            queryClient.invalidateQueries("books")
         }
     })
 
     const updateContactMutation = useMutation(updateContact,{
         onSuccess: () => {
-            queryClient.invalidateQueries("contacts")
+            queryClient.invalidateQueries("books")
         }
     })
 
 
     const deleteContactMutation = useMutation(deleteContact,{
         onSuccess: () => {
-            queryClient.invalidateQueries("contacts")
+            queryClient.invalidateQueries("books")
         }
     })
 
@@ -54,11 +54,11 @@ export default function ContactList() {
                 id="new-contact"
                 value={newContact}
                 onChange={(e) => setNewContact(e.target.value)}
-                placeholder="Enter new contact"
+                placeholder="Enter new book"
                 />
             </div>
             <button className='submit'>
-                <FontAwesomeIcon icon={faUpload}/>
+                <FontAwesomeIcon icon={faSquareCheck}/>
             </button>
         </form>
     )
@@ -69,7 +69,7 @@ export default function ContactList() {
     }else if(isError){
         content = <p>{error.message}</p>
     }else{
-        content = contacts.map((contact) => {
+        content = books.map((contact) => {
             return(
                 <article key={contact.id}>
                     <div className='contact'>
